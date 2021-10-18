@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gb.wn.main.DAO.ReplyDAO">
+
+	<!-- 댓글 조회 --><!--파라미터 타입은 생략 가능  -->
+	<select id="readReply" resultType="com.gb.wn.main.board.boardVO.ReplyVO">
+    	SELECT
+    		  RNO, CONTENT, WRITER, REGDATE
+    	 FROM GB_REPLY
+    	WHERE BNO = #{bno}
+	</select>
+	
+	<!--게시물 글쓰기   -->
+	<insert id="writeReply">
+		INSERT INTO GB_REPLY(
+			BNO
+			, RNO
+			, CONTENT
+			, WRITER
+		)
+		VALUES(    #{bno}
+			, GB_REPLY_SEQ.NEXTVAL
+			, #{content}
+			, #{writer}	)
+	</insert>
+
+	<!-- 댓글 수정 -->
+	<update id="updateReply" parameterType="com.gb.wn.main.board.boardVO.ReplyVO">
+		UPDATE GB_REPLY SET CONTENT = #{content}
+		WHERE RNO = #{rno}
+	</update>
+
+	<!-- 댓글 삭제 -->
+	<delete id="deleteReply" parameterType="com.gb.wn.main.board.boardVO.ReplyVO">
+		DELETE FROM GB_REPLY
+		WHERE RNO = #{rno}
+	</delete>
+	
+	<!-- 선택된 댓글 조회 -->
+	<select id="selectReply" resultType="com.gb.wn.main.board.boardVO.ReplyVO">
+		SELECT
+				BNO
+			  , RNO
+			  , CONTENT
+			  , WRITER
+			  , REGDATE
+		  FROM GB_REPLY
+		 WHERE RNO = #{rno}
+	</select>
+	
+	  <!-- 댓글 개수 -->
+	<update id="replyCnt">
+		update
+			gb_board
+		set
+			reCnt = (select count(*) from gb_reply where bno = #{bno})
+		where
+			bno = #{bno}
+	</update>
+
+
+</mapper>

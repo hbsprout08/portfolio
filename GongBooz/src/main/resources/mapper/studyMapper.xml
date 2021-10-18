@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- mapper interface: dao interface 경로를 namespace로  -->
+<!--mybatis-cofing.xml에서 StudyVO alias 지정  -->
+<mapper namespace="com.gb.wn.main.DAO.StudyDAO">
+	<!--모든 스터디 목록을 보는 스터디 모집 메인 페이지 화면  -->
+	<select id="getAllStudy" resultType="StudyVO">
+	SELECT * FROM STUDYROOM order by ROWNUM DESC
+	</select>
+	
+	<!--스터디 지역으로 검색 -->
+	<select id="getStudy_region" resultType="StudyVO">
+		SELECT *
+		FROM STUDYROOM where region like '%' || #{region} || '%' order by ROWNUM DESC
+	</select>
+	<!--스터디 태그로 검색 -->
+	<select id="getStudy_tag" resultType="StudyVO">
+		SELECT *
+		FROM STUDYROOM where study_tag like '%' || #{study_tag} || '%' order by ROWNUM DESC
+	</select>
+	<!--스터디 이름으로 검색  -->
+	<select id="getStudy_name" resultType="StudyVO">
+		SELECT *
+		FROM STUDYROOM where study_name like '%' || #{study_name} || '%' order by ROWNUM DESC
+	</select>
+	
+	<!--iBatis :#name#  -->
+	<insert id="insertStudy">
+	 INSERT INTO STUDYROOM
+	 VALUES (#{study_name},#{study_tag},#{region},#{max_number},#{max_number}) 
+	</insert>
+	
+		
+	<!--특정 스터디를 삭제한다. -->
+	<delete id="deleteStudy">
+	delete from STUDYROOM where study_name=#{study_name}
+	</delete>
+	
+	<!--특정 스터디를 클릭하면 잔여가능 인원 cur이 하나 줄어든다. 화면에 나타나는 것은  현재 참여 인원/정원이 될 것이다. -->
+	<update id="updateStudy" >
+	update STUDYROOM set cur_number = cur_number-1 where study_name=#{study_name}
+	</update> 
+	
+	<!--하나의 스터디룸에 접근  -->
+	<select id="getStudyRoom" resultType="StudyVO">
+	SELECT * FROM STUDYROOM where study_name=#{study_name}
+	</select>
+	
+	
+</mapper>
