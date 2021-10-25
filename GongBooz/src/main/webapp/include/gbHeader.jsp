@@ -87,7 +87,6 @@
 		});
 		
 		$('#login').click(function(){
-			//$('#mainifr').attr('src', './login.jsp');
 			$('#mainifr').attr('src', '${pageContext.request.contextPath}/member/login.do');
 			$('#music').removeClass('box').addClass('underline');
 			$('#free').removeClass('box').addClass('underline');
@@ -95,7 +94,6 @@
 			$(this).removeClass('underline').addClass('box');
 		});
 		$('#logout').click(function(){
-			//$('#mainifr').attr('src', './login.jsp');
 			$('#mainifr').attr('src', '${pageContext.request.contextPath}/member/logout.do');
 			$('#music').removeClass('box').addClass('underline');
 			$('#free').removeClass('box').addClass('underline');
@@ -103,6 +101,9 @@
 			$(this).removeClass('underline').addClass('box');
 		});
 	
+		$('#title').click(function(){
+			$('#mainifr').attr('src', '${pageContext.request.contextPath}/gbMain.jsp');
+		});
 
 	});
 </script>
