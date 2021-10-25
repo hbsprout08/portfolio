@@ -102,7 +102,7 @@
 		});
 	
 		$('#title').click(function(){
-			$('#mainifr').attr('src', '${pageContext.request.contextPath}/gbMain.jsp');
+			$('#mainifr').attr('src', '${pageContext.request.contextPath}/gbMusic.jsp');
 		});
 
 	});
