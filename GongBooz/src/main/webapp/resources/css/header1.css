@@ -1,6 +1,13 @@
 @charset "EUC-KR";
 
 @font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
     font-family: 'title';
     src: url('../MindFont.otf') format('opentype');
 }
@@ -14,11 +21,11 @@
 	#title{font-family: 'title', serif;		color: #FFFFFF;		font-size:70px;
 			text-align: center;		margin-left: 35%; margin-right: 35%;	cursor:pointer;}
 		
-	.menu2{margin-left: 10%;	display: inline-block;	text-align: center;}
+	.menu2{font-family: 'Pretendard-Regular';	margin-left: 10%;	display: inline-block;	text-align: center;}
 	
 	
 	.default{display: inline-block;	padding: 5px;	margin-right: 10px;
-				color: #FFFFFF; font-family: '³ª´®°íµñ', sans-serif;}	
+				color: #FFFFFF; font-family: 'Pretendard-Regular', '³ª´®°íµñ';}	
 	
 	.box{background-color: white;	color: #212121;		border-radius:10%; }
 	

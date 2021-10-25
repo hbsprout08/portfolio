@@ -15,16 +15,16 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <style type="text/css">
 
- @font-face {
-    font-family: 'ChosunSg';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunSg.woff') format('woff');
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
 
 			 li {list-style: none; float: left; padding: 6px;} 
 			
-			*{	font-family: 'ChosunSg';
+			*{	font-family: 'Pretendard-Regular', '나눔고딕';
 				margin:0;
 				padding:0;
 			  /*   color:white; */

@@ -5,13 +5,14 @@
 <head>
 <style>
 	@font-face {
-    font-family: 'ChosunSg';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunSg.woff') format('woff');
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;}
     
     
-	p{	font-family: 'ChosunSg';	color:white;	display:inline-block;	text-weight: 900;	font-size: 18px;}
+	p{	font-family: 'Pretendard-Regular', '나눔고딕';
+		color:white;	display:inline-block;	text-weight: 900;	font-size: 18px;}
 	#roomName{background-color: #E66E00; text-weight: }
 	#text{margin-left:100px;}
 	
